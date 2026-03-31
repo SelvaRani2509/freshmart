@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+.app-root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.sidebar-layout {
   min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #0b1727;
+  color: #f8f9fa;
+}
+
+.sidebar .brand {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.sidebar .nav-link {
+  color: #ced4da;
+  font-size: 0.95rem;
+  border-radius: 0.35rem;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  color: #ffffff;
+  background: linear-gradient(90deg, #198754, #20c997);
+}
+
+.sidebar .nav-link i {
+  width: 1.5rem;
+}
+
+.content-area {
+  background-color: #f5f7fb;
+}
+
+.page-header-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.product-card-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.product-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.75rem 1.5rem rgba(15, 23, 42, 0.18);
+}
+
+.rating-stars {
+  color: #f6b400;
+}
+
+.status-pill {
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+}
+/* Horizontal product card */
+.product-h-card {
+  width: 160px;
+  min-width: 160px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.product-h-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-h-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+
+/* Product Card - SAME SIZE ALWAYS */
+.product-h-card {
+  width: 170px;
+  min-width: 170px;
+  height: 200px;
+
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  transition: all 0.25s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.product-h-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.product-h-card {
+  width: 220px;
+  min-width: 220px;
+  height: 260px;
+
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: all 0.25s ease;
+}
+
+.product-h-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* IMAGE */
+.product-h-card img {
+  width: 100%;
+  height: 150px;   /* BIGGER image */
+  object-fit: cover;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+/* PRODUCT NAME */
+.product-name {
+  padding: 12px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #212529;
+  text-align: center;
+
+  line-height: 1.4;
+  height: 48px;   /* Enough for 2 full lines */
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.category-card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.category-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+/* Stop full page horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Smooth horizontal scroll only for category rows */
+.category-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+
+.category-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+}
+
+.category-scroll::-webkit-scrollbar-track {
+  background: transparent;
 }
