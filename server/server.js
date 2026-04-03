@@ -111,7 +111,7 @@ app.post('/api/orders', (req, res) => {
 app.use(express.static(path.join(__dirname, '../build')));
 
 // Catch-all route to serve the React app (Express 5 syntax)
-app.get('/*', (req, res) => {
+app.get('/*splat', (req, res) => {
     // If the request is for an API route that wasn't matched above, return 404
     if (req.url.startsWith('/api')) {
         return res.status(404).json({ error: 'Not Found' });
